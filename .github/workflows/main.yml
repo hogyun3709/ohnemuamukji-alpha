@@ -1,0 +1,21 @@
+name: Simple submission checker 
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install modules
+        run: yarn
+
+      - name: Run ESLint
+        run: yarn run lint 
+
+      - name: Run test codes
+        run: yarn run test
