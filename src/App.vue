@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <router-view name="header" />
@@ -7,6 +6,4 @@
   <router-view name="footer" />
 </template>
 
-<style>
-
-</style>
+<style></style>
