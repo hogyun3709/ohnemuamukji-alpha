@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>룰렛 뷰 입니다.</h1>
+  <h1 data-test="roulette-view-root">룰렛 뷰 입니다.</h1>
 </template>
