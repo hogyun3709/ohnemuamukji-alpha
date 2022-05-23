@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import { routes } from '@/router'
 
 import FooterView from "@/views/FooterView.vue";
