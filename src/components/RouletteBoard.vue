@@ -26,11 +26,16 @@ function rotateRoulette() {
     data-test="roulette-board"
     @click="rotateRoulette"
   >
-    <img :src="store.getRouletteBoard" alt="룰렛 보드 이미지" />
-    <ul>
+    <img
+      :src="store.getRouletteBoard"
+      alt="룰렛 보드 이미지"
+      data-test="roulette-image"
+    />
+    <ul data-test="roulette-option-list">
       <li
         class="absolute top-20 left-32"
         :class="{ '!left-24': store.optionCurrentQuantity === 3 }"
+        data-test="roulette-option"
       >
         <label class="hidden" for="option-input-1">
           <span>룰렛옵션1</span>
@@ -39,6 +44,7 @@ function rotateRoulette() {
           class="w-20 rounded-md border-black border-2"
           :class="{ 'text-center': store.optionFirstCompleted }"
           :value="store.optionFirstText"
+          data-test="roulette-first-option"
           @input="store.setFirstOption"
           @blur="store.addFirstOptionToList"
           @focus="store.editFirstOption"
@@ -47,6 +53,7 @@ function rotateRoulette() {
       <li
         class="absolute top-60 left-32"
         :class="{ '!left-24': store.optionCurrentQuantity === 3 }"
+        data-test="roulette-option"
       >
         <label class="hidden" for="option-input-2">
           <span>룰렛옵션2</span>
@@ -55,6 +62,7 @@ function rotateRoulette() {
           class="w-20 rounded-md border-black border-2"
           :class="{ 'text-center': store.optionSecondCompleted }"
           :value="store.optionSecondText"
+          data-test="roulette-second-option"
           @input="store.setSecondOption"
           @blur="store.addSecondOptionToList"
           @focus="store.editSecondOption"
@@ -63,6 +71,7 @@ function rotateRoulette() {
       <li
         class="absolute top-40 left-56 hidden"
         :class="{ '!block': store.optionCurrentQuantity >= 3 }"
+        data-test="roulette-option"
       >
         <label class="hidden" for="option-input-2">
           <span>룰렛옵션3</span>
@@ -70,6 +79,7 @@ function rotateRoulette() {
         <input
           class="w-20 rounded-md border-black border-2"
           :value="store.optionThirdText"
+          data-test="roulette-third-option"
           @input="store.setThirdOption"
           @blur="store.addThridOptionToList"
           @focus="store.editThirdOption"
@@ -78,6 +88,7 @@ function rotateRoulette() {
       <li
         class="absolute top-40 left-10 hidden"
         :class="{ '!block': store.optionCurrentQuantity >= 4 }"
+        data-test="roulette-option"
       >
         <label class="hidden" for="option-input-2">
           <span>룰렛옵션4</span>
@@ -85,6 +96,7 @@ function rotateRoulette() {
         <input
           class="w-20 rounded-md border-black border-2"
           :value="store.optionForthText"
+          data-test="roulette-forth-option"
           @input="store.setForthOption"
           @blur="store.addForthOptionToList"
           @focus="store.editForthOption"
@@ -94,17 +106,21 @@ function rotateRoulette() {
   </div>
 
   <!--option controller-->
-  <div class="flex justify-around my-10" data-test="option-controller">
+  <div class="flex justify-around my-10" data-test="roulette-option-counter">
     <button
       :class="{
         'text-slate-400':
           store.optionCurrentQuantity === store.optionMinQuantity,
       }"
+      data-test="roulette-change-option-decrease"
       @click="store.changeOptionQuantity(-1)"
     >
       <font-awesome-icon class="w-8 h-8" :icon="['far', 'minus-square']" />
     </button>
-    <button @click="store.clearOptionTextTotal">
+    <button
+      data-test="roulette-option-text-reset"
+      @click="store.clearOptionTextTotal"
+    >
       <font-awesome-icon class="w-8 h-8" :icon="['fa', 'eraser']" />
     </button>
     <button
@@ -112,6 +128,7 @@ function rotateRoulette() {
         'text-slate-400':
           store.optionCurrentQuantity === store.optionMaxQuantity,
       }"
+      data-test="roulette-change-option-increase"
       @click="store.changeOptionQuantity(1)"
     >
       <font-awesome-icon class="w-8 h-8" :icon="['far', 'plus-square']" />

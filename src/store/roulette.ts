@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { Roulette } from "@/types/roulette";
 
-const optionsValidation: Roulette = {
+export const roulette: Roulette = {
   minQuantity: 2,
   maxQuantity: 4,
   boardList: [
@@ -22,19 +22,19 @@ const optionsValidation: Roulette = {
 
 export const useRouletteStore = defineStore("roulette", {
   state: () => ({
-    optionCurrentQuantity: optionsValidation.minQuantity,
-    optionMinQuantity: optionsValidation.minQuantity,
-    optionMaxQuantity: optionsValidation.maxQuantity,
-    optionBoardList: optionsValidation.boardList,
-    optionTotalList: optionsValidation.optionList,
-    optionFirstText: optionsValidation.optionFirst,
-    optionSecondText: optionsValidation.optionSecond,
-    optionThirdText: optionsValidation.optionThird,
-    optionForthText: optionsValidation.optionForth,
-    optionFirstCompleted: optionsValidation.optionFirstDone,
-    optionSecondCompleted: optionsValidation.optionSecondDone,
-    optionThirdCompleted: optionsValidation.optionThirdDone,
-    optionForthCompleted: optionsValidation.optionForthDone,
+    optionCurrentQuantity: roulette.minQuantity,
+    optionMinQuantity: roulette.minQuantity,
+    optionMaxQuantity: roulette.maxQuantity,
+    optionBoardList: roulette.boardList,
+    optionTotalList: roulette.optionList,
+    optionFirstText: roulette.optionFirst,
+    optionSecondText: roulette.optionSecond,
+    optionThirdText: roulette.optionThird,
+    optionForthText: roulette.optionForth,
+    optionFirstCompleted: roulette.optionFirstDone,
+    optionSecondCompleted: roulette.optionSecondDone,
+    optionThirdCompleted: roulette.optionThirdDone,
+    optionForthCompleted: roulette.optionForthDone,
   }),
 
   getters: {
