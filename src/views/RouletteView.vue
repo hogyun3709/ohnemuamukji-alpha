@@ -7,27 +7,27 @@ import { useHeaderNavigationStore } from "@/store/header";
 
 const storeHeader = useHeaderNavigationStore();
 
-const store = useRouletteStore();
+const storeRoulette = useRouletteStore();
 </script>
 
 <template>
   <main class="flex flex-col justify-center relative" data-test="roulette-view-root">
-    <Transition name="nested">
+    <Transition name="drop-down">
       <MenuDialog v-show="storeHeader.isMenuOpen"></MenuDialog>
     </Transition>
     <div class="flex flex-col h-full z-0">
       <div class="my-4 mx-auto" data-test="option-result">
-        <span :class="{ hidden: store.optionFirstCompleted }">
-          {{ store.optionFirstText }}
+        <span :class="{ hidden: storeRoulette.optionFirstCompleted }">
+          {{ storeRoulette.optionFirstText }}
         </span>
-        <span :class="{ hidden: store.optionSecondCompleted }">
-          {{ store.optionSecondText }}
+        <span :class="{ hidden: storeRoulette.optionSecondCompleted }">
+          {{ storeRoulette.optionSecondText }}
         </span>
-        <span :class="{ hidden: store.optionThirdCompleted }">
-          {{ store.optionThirdText }}
+        <span :class="{ hidden: storeRoulette.optionThirdCompleted }">
+          {{ storeRoulette.optionThirdText }}
         </span>
-        <span :class="{ hidden: store.optionForthCompleted }">
-          {{ store.optionForthText }}
+        <span :class="{ hidden: storeRoulette.optionForthCompleted }">
+          {{ storeRoulette.optionForthText }}
         </span>
       </div>
       <!--indicator-->
@@ -41,17 +41,17 @@ const store = useRouletteStore();
 </template>
 
 <style>
-.nested-enter-active,
-.nested-leave-active {
+.drop-down-enter-active,
+.drop-down-leave-active {
   transition: all 0.4s ease-in-out;
 }
 
-.nested-leave-active {
+.drop-down-leave-active {
   transition-delay: 0.2s;
 }
 
-.nested-enter-from,
-.nested-leave-to {
+.drop-down-enter-from,
+.drop-down-leave-to {
   transform: translateY(-90%);
   opacity: 0;
 }
