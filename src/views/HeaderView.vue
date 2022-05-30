@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { reactive } from "vue";
+import { useHeaderNavigationStore } from "@/store/header";
 
-const state = reactive({ isMenuOpen: false });
-
-function openMenu() {
-  state.isMenuOpen = !state.isMenuOpen;
-}
+const store = useHeaderNavigationStore();
 </script>
 
 <template>
   <header class="bg-indigo-300" data-test="header-view-root">
-    <button class="menu-icon" :class="{ open: state.isMenuOpen }" @click="openMenu">
+    <button
+      class="menu-icon"
+      :class="{ open: store.isMenuOpen }"
+      @click="store.changeMenuStatus"
+    >
       <span></span>
       <span></span>
       <span></span>
