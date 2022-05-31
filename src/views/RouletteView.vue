@@ -11,7 +11,10 @@ const storeRoulette = useRouletteStore();
 </script>
 
 <template>
-  <main class="flex flex-col justify-center relative" data-test="roulette-view-root">
+  <main
+    class="flex flex-col justify-center relative"
+    data-test="roulette-view-root"
+  >
     <Transition name="drop-down">
       <MenuDialog v-show="storeHeader.isMenuOpen"></MenuDialog>
     </Transition>

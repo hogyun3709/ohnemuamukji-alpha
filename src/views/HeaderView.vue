@@ -6,7 +6,11 @@ const storeHeader = useHeaderNavigationStore();
 
 <template>
   <header class="bg-indigo-300" data-test="header-view-root">
-    <button class="menu-icon" :class="{ open: storeHeader.isMenuOpen }" @click="storeHeader.changeMenuStatus">
+    <button
+      class="menu-icon"
+      :class="{ open: storeHeader.isMenuOpen }"
+      @click="storeHeader.changeMenuStatus"
+    >
       <span class="menu-top-line"></span>
       <span class="menu-middle-line"></span>
       <span class="menu-bottom-line"></span>
