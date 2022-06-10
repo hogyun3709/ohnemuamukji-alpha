@@ -1,4 +1,5 @@
 import { mount } from "@vue/test-utils";
+import { createTestingPinia } from "@pinia/testing";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
@@ -12,6 +13,7 @@ library.add(faBars, faCamera, faUser);
 describe("Test case for HeaderView file", () => {
   const wrapper = mount(HeaderView, {
     global: {
+      plugins: [createTestingPinia()],
       stubs: { FontAwesomeIcon },
     },
   });

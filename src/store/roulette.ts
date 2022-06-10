@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { Roulette } from "@/types/roulette";
+import { Roulette } from "@/interfaces/roulette";
 
 export const roulette: Roulette = {
   minQuantity: 2,
