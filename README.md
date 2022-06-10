@@ -4,7 +4,7 @@
 #### This project offers a simple spinning roulette to support helps who suffer from decision making specifically food and beverage.
 #### Users can add options manually and take picture to put menu options on the spinning roulette.
 
-- #### [For more Project Docs](https://historical-nova-2c7.notion.site/eb78e70a8479458ca52740a036597ac5)
+- #### [For more Project Docs](https://hogyun3709.notion.site/hogyun3709/eb78e70a8479458ca52740a036597ac5)
 
 
 ## Development Environments
